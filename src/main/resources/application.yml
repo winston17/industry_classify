@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: industry_classify
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.8.110:9300
+      cluster-name: lb_service
+      repositories:
+        enabled: true
+#    neo4j:
+#      uri: http://192.168.18.229:7687
+#      username: neo4j
+#      password: 123456
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://192.168.8.107:1433;DatabaseName=YOUZC_DW
+    username: youzhicaisa
+    password: qwertyuiop!@#$%^*()0987654321
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: true
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+
+server:
+  port: 8002
